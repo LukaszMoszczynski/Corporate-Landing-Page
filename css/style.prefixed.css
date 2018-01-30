@@ -94,10 +94,6 @@ body {
           flex: 100%;
 }
 
-.section-7 {
-  background-color: #FFFFFF;
-}
-
 /*jumbotron*/
 .header {
   background-image: url(http://pics.tinypic.pl/i/00951/82tduxw9fwfe.jpg);
@@ -259,9 +255,8 @@ body {
 .features {
   background-image: url(http://pics.tinypic.pl/i/00951/wmp7lc1hinfx.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #F6F5F3;
   background-position: center;
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -275,6 +270,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  padding: 80px 0;
 }
 
 .features .col-12 {
@@ -532,29 +528,164 @@ body {
   font-family: 'Julius Sans One', sans-serif;
 }
 
-.contact {
+/*trial section*/
+.trial {
   background-color: #323969;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-.contact h4 {
+.trial h4 {
   color: #FF6D6D;
   margin: 0;
   padding-top: 100px;
   font-size: 30px;
+  font-family: 'Julius Sans One', sans-serif;
 }
 
-.contact h1 {
+.trial h1 {
   color: #FFFFFF;
   font-size: 40px;
   margin: 5px 0 100px 0;
+  font-family: 'Julius Sans One', sans-serif;
 }
 
-.contact form {
+.trial .sign-contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   color: #FFFFFF;
+  padding: 0 0 20px 0;
+  font-size: 18px;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.trial .sign-contact span {
+  padding-right: 5px;
+  font-size: 30px;
+  -webkit-transform: rotate(290deg);
+          transform: rotate(290deg);
+}
+
+.trial form {
+  color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.trial form input {
+  height: 50px;
+  width: 250px;
+  text-transform: uppercase;
+  border: 1px solid #FFFFFF;
+  background-color: #333969;
+  color: #FFFFFF;
+  text-align: center;
+  border-radius: 5%;
+  transition: 0.5s;
+  font-family: 'Julius Sans One', sans-serif;
+  outline-color: #FFFFFF;
+}
+
+.trial form input::-webkit-input-placeholder {
+  color: #FFFFFF;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.trial form input:-ms-input-placeholder {
+  color: #FFFFFF;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.trial form input::placeholder {
+  color: #FFFFFF;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.trial form button {
+  height: 50px;
+  width: 250px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background-color: #FF6D6D;
+  border: 1px solid #FF6D6D;
+  border-radius: 5%;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.trial p {
+  color: #8286A3;
+  padding: 20px 0 80px 0;
+  margin: 20px 0 0 0;
+  margin-right: 10px;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.trial p a {
+  color: #FFFFFF;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+/*contact section*/
+.contact {
+  background-color: #FFFFFF;
+}
+
+.contact .triangle-3 {
+  background-image: linear-gradient(to left bottom, #FF6D6D 50%, transparent 50%);
+}
+
+.contact .col-4 {
+  max-width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 50px 0 50px 0;
+}
+
+.contact .col-4 img {
+  width: 100px;
+}
+
+.contact .col-4 h4 {
+  font-size: 25px;
+  margin: 0 0 35px 0;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.contact .col-4 p {
+  color: #8286A3;
+  font-family: 'Julius Sans One', sans-serif;
+  margin: 20px 0 5px 0;
+}
+
+.contact .col-4 a {
+  text-decoration: none;
+  color: #8286A3;
+  font-family: 'Julius Sans One', sans-serif;
+  padding-bottom: 10px;
+}
+
+.contact .col-4 a:hover {
+  text-decoration: underline;
+}
+
+.contact .col-4 div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -562,40 +693,48 @@ body {
       justify-content: space-around;
 }
 
-.contact form input,
-.contact form textarea {
-  height: 50px;
-  width: 200px;
-  text-transform: uppercase;
-  border: 1px solid #FFFFFF;
-  background-color: #333969;
-  color: #FFFFFF;
-  text-align: center;
-  border-radius: 5%;
-}
-
-.contact form input:focus,
-.contact form textarea:focus {
-  border: 1px solid #FFFFFF;
-}
-
-.contact form button {
-  height: 50px;
-  width: 200px;
-  text-transform: uppercase;
-  color: #FFFFFF;
-  background-color: #FF6D6D;
-  border: 1px solid #FF6D6D;
-  border-radius: 5%;
-}
-
-.contact p {
+.contact .col-4 div i {
+  padding-top: 20px;
+  font-size: 30px;
   color: #8286A3;
-  padding: 20px 0 80px 0;
-  margin: 20px 0 0 0;
+  cursor: pointer;
 }
 
-.contact p a {
+.contact .col-4 form {
+  max-width: 250px;
+  border: 1px solid #8286A3;
+}
+
+.contact .col-4 form input {
+  width: 200px;
+  height: 50px;
+  border: none;
+  outline-color: #FFFFFF;
+  text-align: center;
+}
+
+.contact .col-4 form input::-webkit-input-placeholder {
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.contact .col-4 form input:-ms-input-placeholder {
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.contact .col-4 form input::placeholder {
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.contact .col-4 form button {
+  width: 44px;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: #FF6D6D;
+}
+
+.contact .col-4 form button i {
   color: #FFFFFF;
 }
 /*# sourceMappingURL=style.prefixed.css.map */

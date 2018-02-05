@@ -5,6 +5,43 @@
 }
 
 /*global*/
+/*parallax*/
+.MainContainer {
+  -webkit-perspective: 1px;
+          perspective: 1px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.ContentContainer {
+  position: relative;
+  display: block;
+  background-color: white;
+  z-index: 1;
+}
+
+.ParallaxContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  z-index: -1;
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: translateZ(-1px) scale(2);
+          transform: translateZ(-1px) scale(2);
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -95,8 +132,12 @@ body {
 }
 
 /*jumbotron*/
-.header {
-  background-image: url(http://pics.tinypic.pl/i/00951/82tduxw9fwfe.jpg);
+.jumbotron {
+  width: 100%;
+}
+
+.jumbotron .header {
+  background-image: url("../images/jumbotron.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -113,16 +154,7 @@ body {
   height: 100vh;
 }
 
-.header .hero .sign {
-  color: #8286A3;
-  font-size: 60px;
-  font-family: 'Julius Sans One', sans-serif;
-}
-
-.header .hero .fa {
-  font-size: 70px;
-  color: #8286A3;
-  margin: 30px 0;
+.jumbotron .header .hero {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -132,9 +164,42 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.header .hero .button {
+.jumbotron .header .hero .sign {
+  color: #8286A3;
+  font-size: 60px;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.jumbotron .header .hero .fa {
+  font-size: 70px;
+  color: #8286A3;
+  margin: 30px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.jumbotron .header .hero .fa:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.jumbotron .header .hero .button {
   height: 50px;
   width: 200px;
   background-color: #FF6D6D;
@@ -150,9 +215,15 @@ body {
   border-radius: 5px;
   margin: 0 auto;
   cursor: pointer;
+  transition: 0.5s;
 }
 
-.header .hero .button a {
+.jumbotron .header .hero .button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.jumbotron .header .hero .button a {
   color: #FFFFFF;
   text-align: center;
   text-decoration: none;
@@ -169,7 +240,7 @@ body {
   font-size: 20px;
 }
 
-.header .hero p {
+.jumbotron .header .hero p {
   color: #8286A3;
   margin-bottom: 20%;
   font-size: 20px;
@@ -230,16 +301,29 @@ body {
 }
 
 .design .right-column {
-  background-image: url("../images/design-background.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.design .right-column:hover .image-design {
+  -webkit-filter: none;
+          filter: none;
+}
+
+.design .right-column .image-design {
+  background-image: url("../images/design-background.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  transition: 0.5s;
 }
 
 .design .right-column .triangle {
@@ -253,13 +337,15 @@ body {
 
 /*features*/
 .features {
-  background-image: url(http://pics.tinypic.pl/i/00951/wmp7lc1hinfx.png);
+  background-image: url("../images/BG.png");
   background-repeat: no-repeat;
   background-color: #F6F5F3;
   background-position: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -290,6 +376,22 @@ body {
 }
 
 .features .col-4 {
+  max-width: 350px;
+  width: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -307,6 +409,13 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0 auto;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.features .col-4 div:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .features .col-4 div .fa {
@@ -318,12 +427,24 @@ body {
   background-color: #0096cc;
 }
 
+.features .col-4 .picture:hover .fa {
+  color: #33ff77;
+}
+
 .features .col-4 .plane {
   background-color: #33ccff;
 }
 
+.features .col-4 .plane:hover .fa {
+  color: #bfbfbf;
+}
+
 .features .col-4 .bulb {
   background-color: #00394d;
+}
+
+.features .col-4 .bulb:hover .fa {
+  color: #ffff1a;
 }
 
 .features .col-4 h4 {
@@ -336,7 +457,6 @@ body {
 .features .col-4 p {
   color: #8286A3;
   font-family: 'Julius Sans One', sans-serif;
-  font-size: 15px;
   margin-top: 10px;
 }
 
@@ -368,7 +488,7 @@ body {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 5% 15% 5% 5%;
+  padding: 5% 10% 5% 5%;
 }
 
 .responsive .right-column-2 h4 {
@@ -419,7 +539,7 @@ body {
 
 /*team section*/
 .team {
-  background-image: url(http://pics.tinypic.pl/i/00951/xzeyxcm7h8lw.png);
+  background-image: url("../images/BG2.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -429,13 +549,12 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.team .col-4 {
-  max-width: 400px;
-  width: 400px;
-  height: 400px;
-  padding: 10px;
+.team .row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -445,17 +564,73 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.team .col-4 {
+  max-width: 350px;
+  width: 350px;
+  height: 400px;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 100px;
+  margin-top: 150px;
+  position: relative;
 }
 
 .team .col-4 .image {
-  height: 150px;
-  width: 150px;
-  border: 1px red solid;
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.team .col-4 .image:hover .bgrd {
+  display: inline;
+}
+
+.team .col-4 .image .bgrd {
+  display: none;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.team .col-4 .workerPicture1 {
+  background-image: url("../images/crew1.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.team .col-4 .workerPicture2 {
+  background-image: url("../images/crew2.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.team .col-4 .workerPicture3 {
+  background-image: url("../images/crew3.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .team .col-4 h4 {
@@ -490,7 +665,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 100px;
+  margin-bottom: 50px;
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
@@ -522,7 +697,16 @@ body {
 
 .awesome p {
   color: #8286A3;
-  padding: 0 300px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-bottom: 100px;
   font-size: 20px;
   font-family: 'Julius Sans One', sans-serif;
@@ -579,6 +763,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   font-family: 'Julius Sans One', sans-serif;
@@ -622,6 +808,13 @@ body {
   border: 1px solid #FF6D6D;
   border-radius: 5%;
   font-family: 'Julius Sans One', sans-serif;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.trial form button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .trial p {
@@ -640,17 +833,47 @@ body {
 /*contact section*/
 .contact {
   background-color: #FFFFFF;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.contact .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .contact .triangle-3 {
   background-image: linear-gradient(to left bottom, #FF6D6D 50%, transparent 50%);
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  bottom: 0;
+  right: 0;
 }
 
 .contact .col-4 {
   max-width: 250px;
+  width: 250px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -679,10 +902,12 @@ body {
   color: #8286A3;
   font-family: 'Julius Sans One', sans-serif;
   padding-bottom: 10px;
+  transition: 0.5s;
 }
 
 .contact .col-4 a:hover {
   text-decoration: underline;
+  color: #FF6D6D;
 }
 
 .contact .col-4 div {
@@ -694,14 +919,18 @@ body {
 }
 
 .contact .col-4 div i {
-  padding-top: 20px;
+  padding: 20px;
   font-size: 30px;
   color: #8286A3;
   cursor: pointer;
+  transition: 0.5s;
+}
+
+.contact .col-4 div i:hover {
+  color: #FF6D6D;
 }
 
 .contact .col-4 form {
-  max-width: 250px;
   border: 1px solid #8286A3;
 }
 
@@ -732,9 +961,181 @@ body {
   padding: 0;
   border: none;
   background-color: #FF6D6D;
+  cursor: pointer;
+}
+
+.contact .col-4 form button:hover i {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
 }
 
 .contact .col-4 form button i {
   color: #FFFFFF;
+  transition: 0.5s;
+}
+
+/*RWD*/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .trial form input {
+    width: 200px;
+  }
+  .trial form button {
+    width: 200px;
+  }
+  .contact .triangle-3 {
+    background-image: linear-gradient(to left bottom, #FF6D6D 50%, transparent 50%);
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    top: 0;
+    right: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .col-s-1 {
+    -webkit-box-flex: 8.33%;
+        -ms-flex: 8.33%;
+            flex: 8.33%;
+  }
+  .col-s-2 {
+    -webkit-box-flex: 16.66%;
+        -ms-flex: 16.66%;
+            flex: 16.66%;
+  }
+  .col-s-3 {
+    -webkit-box-flex: 25%;
+        -ms-flex: 25%;
+            flex: 25%;
+  }
+  .col-s-4 {
+    -webkit-box-flex: 33.33%;
+        -ms-flex: 33.33%;
+            flex: 33.33%;
+  }
+  .col-s-5 {
+    -webkit-box-flex: 41.66%;
+        -ms-flex: 41.66%;
+            flex: 41.66%;
+  }
+  .col-s-6 {
+    -webkit-box-flex: 50%;
+        -ms-flex: 50%;
+            flex: 50%;
+  }
+  .col-s-7 {
+    -webkit-box-flex: 58.33%;
+        -ms-flex: 58.33%;
+            flex: 58.33%;
+  }
+  .col-s-8 {
+    -webkit-box-flex: 66.66%;
+        -ms-flex: 66.66%;
+            flex: 66.66%;
+  }
+  .col-s-9 {
+    -webkit-box-flex: 75%;
+        -ms-flex: 75%;
+            flex: 75%;
+  }
+  .col-s-10 {
+    -webkit-box-flex: 83.33%;
+        -ms-flex: 83.33%;
+            flex: 83.33%;
+  }
+  .col-s-11 {
+    -webkit-box-flex: 91.66%;
+        -ms-flex: 91.66%;
+            flex: 91.66%;
+  }
+  .col-s-12 {
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+  }
+  .jumbotron .header .hero .sign {
+    font-size: 40px;
+    margin-top: 0;
+    padding: 0;
+  }
+  .design .left-column h2 {
+    font-size: 30px;
+  }
+  .design .left-column h4 {
+    font-size: 20px;
+  }
+  .design .left-column p {
+    font-size: 16px;
+  }
+  .design .right-column {
+    display: none;
+  }
+  .features {
+    padding: 5%;
+  }
+  .features .col-12 {
+    text-align: center;
+  }
+  .features .col-12 h4 {
+    font-size: 20px;
+    margin-top: 5%;
+  }
+  .features .col-12 h2 {
+    font-size: 30px;
+    margin: 5%;
+  }
+  .responsive .left-column-2 {
+    display: none;
+    margin: 10%;
+    padding: 0;
+  }
+  .team .col-4 {
+    margin: 15% 5% 0 5%;
+  }
+  .team .icons {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  .awesome .container {
+    margin: 10%;
+  }
+  .awesome .container h1 {
+    font-size: 30px;
+  }
+  .awesome .container div {
+    display: none;
+  }
+  .trial h4 {
+    font-size: 20px;
+    padding-top: 0;
+    margin-top: 10%;
+  }
+  .trial h1 {
+    font-size: 30px;
+    margin: 5%;
+  }
+  .trial .sign-contact {
+    display: none;
+  }
+  .trial form input {
+    margin: 5%;
+    width: 200px;
+  }
+  .trial form button {
+    margin: 5%;
+    width: 200px;
+  }
+  .contact .col-4 {
+    padding: 0;
+    padding-top: 30px;
+  }
+  .contact .triangle-3 {
+    background-image: linear-gradient(to left bottom, #FF6D6D 50%, transparent 50%);
+    position: absolute;
+    width: 100%;
+    height: 5%;
+    top: 0;
+    right: 0;
+  }
 }
 /*# sourceMappingURL=style.prefixed.css.map */

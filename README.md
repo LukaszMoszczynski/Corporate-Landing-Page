@@ -1,1 +1,1 @@
-# Corporate-Landing-Page
+https://lukaszmoszczynski.github.io/Corporate-Landing-Page/
